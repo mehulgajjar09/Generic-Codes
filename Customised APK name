@@ -7,7 +7,7 @@ archivesBaseName = "FitQuid-v" + versionCode + "-"+ getDate()
   // inside build type
   applicationVariants.all { variant ->
             variant.outputs.all { output ->
-                outputFileName = new File("LECA-" + variant.versionName + "-v" + versionCode + "-" + dateFormat + ".apk");
+                outputFileName = new File("LECA-" + variant.versionName + "-v" + versionCode + "-" + dateFormat + ".apk")
             }
         }
 
