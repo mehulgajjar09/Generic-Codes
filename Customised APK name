@@ -2,7 +2,7 @@
 archivesBaseName = "FitQuid-v" + versionCode + "-"+ getDate()
 
 // for detailed name
-  def dateFormat = new Date().format('dd_MMM_yy-HH_mm')
+  def dateFormat = new Date().format('dd_MMM_yy-HH_mm_a')
   
   // inside build type
   applicationVariants.all { variant ->
