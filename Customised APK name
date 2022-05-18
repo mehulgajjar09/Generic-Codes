@@ -1,0 +1,13 @@
+// for normal name
+archivesBaseName = "FitQuid-v" + versionCode + "-"+ getDate()
+
+// for detailed name
+  def dateFormat = new Date().format('dd_MMM_yy-HH_mm')
+  
+  // inside build type
+  applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                outputFileName = new File("LECA-" + variant.versionName + "-v" + versionCode + "-" + dateFormat + ".apk");
+            }
+        }
+
