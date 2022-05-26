@@ -1,0 +1,27 @@
+// Navigation Drawer slide open
+ val toggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
+            this,
+            drawer,
+            toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        ) {
+            private val scaleFactor = 1f
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                super.onDrawerSlide(drawerView, slideOffset)
+
+                // In-side out
+                /*val slideX = drawerView.width * slideOffset
+                content.translationX = slideX
+                content.scaleX = 1 - slideOffset / scaleFactor
+                content.scaleY = 1 - slideOffset / scaleFactor*/
+
+                content.translationX = slideOffset * drawerView.width
+                drawerLayout.bringChildToFront(drawerView);
+                drawerLayout.requestLayout();
+                //below line used to remove shadow of drawer
+                drawerLayout.setScrimColor(Color.TRANSPARENT);
+            }
+        }
+      //  drawer.setScrimColor(Color.TRANSPARENT)
+        drawer.drawerElevation = 0f
