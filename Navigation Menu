@@ -25,3 +25,9 @@
         }
       //  drawer.setScrimColor(Color.TRANSPARENT)
         drawer.drawerElevation = 0f
+        
+        
+// Prevent toolbar icon to change after navigation menu click
+navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_nav_menu)
+        }
