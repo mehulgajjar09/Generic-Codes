@@ -1,0 +1,26 @@
+   // bntClick is position where popup menu we want to open.
+   
+   val popupView: View =
+                LayoutInflater.from(activity)
+                    .inflate(R.layout.temp, null)
+            val popupWindow = PopupWindow(
+                popupView,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT
+            )
+
+            val radioGroupFilter = popupView.findViewById<View>(R.id.radioGroupFilter) as RadioGroup
+
+            radioGroupFilter.setOnCheckedChangeListener { radioGroup, i ->
+                Handler().postDelayed({
+                    popupWindow.dismiss()
+                }, 400L)
+            }
+
+            btnClick.setOnClickListener {
+                if (!popupWindow.isShowing) {
+                    popupWindow.showAsDropDown(btnClick, 0, 0, Gravity.RIGHT)
+                } else {
+                    popupWindow.dismiss()
+                }
+            }
