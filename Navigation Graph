@@ -1,0 +1,5 @@
+// Add below code block in base fragment in navigation graph to distroy splash fragment on backpress.
+            
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" 
